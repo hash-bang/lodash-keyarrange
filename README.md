@@ -29,3 +29,21 @@ Example usage
 
 	console.log( _.keyArrange(a) );
 	// Outputs { bar: 'barValue', baz: 'bazValue', foo: 'fooValue' }
+
+
+You can also provide a custom sorter for the keys:
+
+	// Example of reverse sorting keys
+	var a = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
+
+	console.log( _.keyArrange(function(a, b) {
+		if (a < b) {
+			return 1;
+		} else if (b < a) {
+			return -1;
+		} else {
+			return 0;
+		}
+	} ) );
+
+	// Outputs { foo: 'fooValue', baz: 'bazValue', bar: 'barValue'  }
