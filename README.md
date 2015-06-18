@@ -34,9 +34,9 @@ Example usage
 You can also provide a custom sorter for the keys:
 
 	// Example of reverse sorting keys
-	var a = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
+	var obj = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
 
-	console.log( _.keyArrange(function(a, b) {
+	console.log( _.keyArrange(obj, function(a, b) {
 		if (a < b) {
 			return 1;
 		} else if (b < a) {
