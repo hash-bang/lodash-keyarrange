@@ -18,12 +18,14 @@ But sometimes we need to output the object with the keys correctly sorted.
 
 This lodash mixin allows key rearrangement within an object - returning a new object.
 
+You can also deep sort an object with `keyArrangeDeep()`.
+
 
 Example usage
 -------------
 
-	var _  = require('lodash');
-	_.mixin(require('lodash-keyarrange');
+	var _ = require('lodash')
+		.mixin(require('lodash-keyarrange'));
 
 	var a = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
 
@@ -47,3 +49,59 @@ You can also provide a custom sorter for the keys:
 	} ) );
 
 	// Outputs { foo: 'fooValue', baz: 'bazValue', bar: 'barValue'  }
+
+
+keyArrangeDeep()
+----------------
+It is also possible to traverse an object and arrange all keys. Scalars and array types are left unaltered but all objects will be run via the keyArrange function.
+
+For Example:
+
+	var _ = require('lodash')
+		.mixin(require('lodash-keyarrange'));
+
+	var out = _.keyArrangeDeep({
+		gamma: [
+			{
+				omegaValue: 123,
+				gammaFoo: 'gammaFooValue',
+			},
+			{
+				kappa: {
+					gammaKappaBaz: 'hello',
+				},
+			},
+			1337,
+		],
+		alpha: 123,
+		si: {
+			theta: 999,
+			eta: 'value!',
+		},
+		beta: 'hello world',
+	});
+
+	console.log(JSON.stringify(out, null, "\t"));
+
+Will output:
+
+	{
+		"alpha": 123,
+		"beta": "hello world",
+		"gamma": [
+			{
+				"gammaFoo": "gammaFooValue",
+				"omegaValue": 123
+			},
+			{
+				"kappa": {
+					"gammaKappaBaz": "hello"
+				}
+			},
+			1337
+		],
+		"si": {
+			"eta": "value!",
+			"theta": 999
+		}
+	}
