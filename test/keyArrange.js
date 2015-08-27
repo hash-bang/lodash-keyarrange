@@ -17,11 +17,8 @@ describe('keyArrange - test #1', function() {
 		expect(outObj).to.have.property('bar', 'barValue');
 		expect(outObj).to.have.property('baz', 'bazValue');
 
-		var argOrder = [];
-		_.forEach(outObj, function(v, k) { argOrder.push(k) });
-
-		expect(argOrder).to.have.length(3);
-		expect(argOrder).to.deep.equal(['bar', 'baz', 'foo']);
+		expect(_.keys(outObj)).to.have.length(3);
+		expect(_.keys(outObj)).to.deep.equal(['bar', 'baz', 'foo']);
 	});
 });
 
@@ -42,11 +39,8 @@ describe('keyArrange - test #2', function() {
 		expect(outObj).to.have.property('age', 25);
 		expect(outObj).to.have.property('location', 'The World');
 
-		var argOrder = [];
-		_.forEach(outObj, function(v, k) { argOrder.push(k) });
-
-		expect(argOrder).to.have.length(4);
-		expect(argOrder).to.deep.equal(['_id', 'age', 'location', 'name']);
+		expect(_.keys(outObj)).to.have.length(4);
+		expect(_.keys(outObj)).to.deep.equal(['_id', 'age', 'location', 'name']);
 	});
 });
 
@@ -75,10 +69,7 @@ describe('keyArrange - test #3 (callbacks)', function() {
 		expect(outObj).to.have.property('age', 25);
 		expect(outObj).to.have.property('location', 'The World');
 
-		var argOrder = [];
-		_.forEach(outObj, function(v, k) { argOrder.push(k) });
-
-		expect(argOrder).to.have.length(4);
-		expect(argOrder).to.deep.equal(['name', 'location', 'age', '_id']);
+		expect(_.keys(outObj)).to.have.length(4);
+		expect(_.keys(outObj)).to.deep.equal(['name', 'location', 'age', '_id']);
 	});
 });
