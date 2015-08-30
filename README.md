@@ -6,7 +6,7 @@ Lodash plugin to correctly sort the keys within an object.
 Why
 ---
 
-In JavaScript objects keys are generally stored in the order in whch they are created.
+In JavaScript objects keys are generally stored in the order in which they are created. [ES6 formalizes this behaviour](http://www.ecma-international.org/ecma-262/6.0/#sec-ordinary-object-internal-methods-and-internal-slots-ownpropertykeys).
 
 	var a = {};
 	a.foo = 1;
