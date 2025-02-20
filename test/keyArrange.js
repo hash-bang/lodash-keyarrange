@@ -1,10 +1,10 @@
-var _ = require('lodash');
-var keyArrange = require('..');
-var expect = require('chai').expect;
+import _ from 'lodash';
+import keyArrange from '../index.js';
+import {expect} from 'chai';
 
 describe('keyArrange - test #1', function() {
-	var inObj = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
-	var outObj;
+	let inObj = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);
@@ -24,8 +24,8 @@ describe('keyArrange - test #1', function() {
 
 
 describe('keyArrange - test #2', function() {
-	var inObj = {_id: 123, name: 'Mr Foobar', age: 25, location: 'The World'};
-	var outObj;
+	let inObj = {_id: 123, name: 'Mr Foobar', age: 25, location: 'The World'};
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);
@@ -46,8 +46,8 @@ describe('keyArrange - test #2', function() {
 
 
 describe('keyArrange - test #3 (callbacks)', function() {
-	var inObj = {_id: 123, name: 'Mr Foobar', age: 25, location: 'The World'};
-	var outObj;
+	let inObj = {_id: 123, name: 'Mr Foobar', age: 25, location: 'The World'};
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);

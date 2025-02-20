@@ -1,10 +1,10 @@
-var _ = require('lodash');
-var keyArrange = require('..');
-var expect = require('chai').expect;
+import _ from 'lodash';
+import keyArrange from '../index.js';
+import {expect} from 'chai';
 
 describe('keyArrangeDeep - same as keyArrange', function() {
-	var inObj = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
-	var outObj;
+	let inObj = {foo: 'fooValue', bar: 'barValue', baz: 'bazValue'};
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);
@@ -24,7 +24,7 @@ describe('keyArrangeDeep - same as keyArrange', function() {
 
 
 describe('keyArrangeDeep - trees', function() {
-	var inObj = {
+	let inObj = {
 		foo: 'fooValue',
 		bar: {
 			foo: 'barFooValue',
@@ -41,7 +41,7 @@ describe('keyArrangeDeep - trees', function() {
 		},
 		baz: 'bazValue',
 	};
-	var outObj;
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);
@@ -88,7 +88,7 @@ describe('keyArrangeDeep - trees', function() {
 
 
 describe('keyArrangeDeep - mixed types', function() {
-	var inObj = {
+	let inObj = {
 		gamma: [
 			{
 				omegaValue: 123,
@@ -108,7 +108,7 @@ describe('keyArrangeDeep - mixed types', function() {
 		},
 		beta: 'hello world',
 	};
-	var outObj;
+	let outObj;
 
 	before(function() {
 		_.mixin(keyArrange);
