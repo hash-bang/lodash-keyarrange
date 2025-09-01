@@ -10,6 +10,9 @@ export function keyArrangeDeep(obj, callback) {
 	if (Array.isArray(obj)) {
 		return obj.map(v => keyArrangeDeep(v, callback));
 	} else if (typeof obj == 'object') {
+		if (obj == null) {
+			return null;
+		}
 		return Object.fromEntries(
 			Object.entries(
 				keyArrange(obj, callback)

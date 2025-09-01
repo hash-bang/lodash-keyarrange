@@ -102,6 +102,7 @@ describe('keyArrangeDeep - mixed types', function() {
 			1337,
 		],
 		alpha: 123,
+		zeta: null,
 		si: {
 			theta: 999,
 			eta: 'value!',
@@ -122,8 +123,8 @@ describe('keyArrangeDeep - mixed types', function() {
 		expect(outObj).to.have.property('gamma');
 		expect(outObj).to.have.property('si');
 
-		expect(_.keys(outObj)).to.have.length(4);
-		expect(_.keys(outObj)).to.deep.equal(['alpha', 'beta', 'gamma', 'si']);
+		expect(_.keys(outObj)).to.have.length(5);
+		expect(_.keys(outObj)).to.deep.equal(['alpha', 'beta', 'gamma', 'si', 'zeta']);
 
 		expect(outObj.gamma).to.be.an('array');
 		expect(outObj.gamma).to.have.length(3);
@@ -145,5 +146,7 @@ describe('keyArrangeDeep - mixed types', function() {
 		expect(outObj.si).to.have.property('eta', 'value!');
 		expect(outObj.si).to.have.property('theta', 999);
 		expect(_.keys(outObj.si)).to.deep.equal(['eta', 'theta']);
+
+		expect(outObj.zeta).to.equal(null)
 	});
 });
