@@ -7,11 +7,11 @@
     ".": "./index.js"
   },
   "dependencies": {
-    "chai": "^5.2.0"
+    "chai": "^6.0.1"
   },
   "devDependencies": {
     "lodash": "^4.17.21",
-    "mocha": "^11.1.0"
+    "mocha": "^11.7.2"
   },
   "scripts": {
     "test": "mocha"
